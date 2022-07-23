@@ -16,15 +16,15 @@ interface MenuItem {
 const menus: MenuItem[] = [
     {
         label: '출석체크',
-        name: 'check'
+        name: 'CheckIn'
     },
     {
         label: '일정',
-        name: 'schedule'
+        name: 'Schedules'
     },
     {
         label: '정보',
-        name: 'info'
+        name: 'Info'
     },
 ];
 
@@ -34,11 +34,9 @@ const Tabs = () => {
     return (
         <View style={styles.tabs}>
             {menus.map(({label, name}, i) => (
-                <TouchableOpacity key={i} onPress={() => navigation.navigate(name)}>
-                    <View style={styles.tab}>
+                <TouchableOpacity key={i} onPress={() => navigation.navigate(name)} style={styles.tab}>
                         <Text>아이콘</Text>
                         <Text>{label}</Text>
-                    </View>
                 </TouchableOpacity>
             ))}
         </View>
